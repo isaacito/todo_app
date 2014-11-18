@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="text-center"><img class="poop" src="http://s3-ec.buzzfed.com/static/2014-08/12/16/enhanced/webdr04/grid-cell-24434-1407875545-3.jpg" alt="poop"> To Do</h1>
+
+<table class="table table-hover">
+  <tbody>
+    <% @tasks.each do |task| %>
+        <tr class="<%= task.completed == true ? 'complete' : 'incomplete' -%>" >
+       
+        <% if task.completed  %>
+        <td><%= link_to '', task_path(task,{task:{completed: false}}), method: :put, class: "fa fa-check-square-o fa-2x"%></td>
+        <% else %>
+        <td><%= link_to '', task_path(task,{task:{completed: true}}), method: :put, class: "fa fa-square-o fa-2x"%></td>
+        <% end %>
+        <!-- show -->
+        <td class="shows"><%= link_to task.task, task %></td>
+        <td><%= task.date %></td>
+       
+        <td><%= link_to '', edit_task_path(task), class: "fa fa-pencil-square-o fa-2x" %></td> 
+        <td><%= link_to '', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash fa-2x"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+<button id="completebutton" type="button" class="btn btn-success">Completed Shit</button>
+<button id="incompletebutton" type="button" class="btn btn-danger">Incomplete Shit</button>
+<button id="showallbutton" type="button" class="btn btn-primary">Show All Shit</button>
+<%= link_to 'New Task', new_task_path, class: "btn btn-default btn" %>
+</div>
+<br>
+
+
+
+</div>

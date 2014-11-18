@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+          <%= form_for(@task, html_options={class: 'form'}) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+    <div class="form-group"> 
+      <%= f.label :task %><br>
+      <%= f.text_field :task, class: "form-control" %> 
+    </div>
+
+    <div class="form-group"> 
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+  <div class="form-group"> 
+    <%= f.label :due_date %><br>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="form-group"> 
+    <%= f.submit class: "form-control btn-success" %>
+  </div>
+
+<% end %>
+
+    </div>
+  </div>
+</div>
