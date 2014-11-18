@@ -15,55 +15,35 @@
  */
 
 #whatever{
-	background-image: url("glyphicons_016_bin.png");
+  background-image: url("glyphicons_016_bin.png");
 }
 
-.table{
-
-}
-
-.success{
-
-	color = green;
-}
-
-.error{
-	color = red;
-}
 
 .text-center{
-	text-decoration: underline;
+  text-decoration: underline;
 
+
+a {
+  color:#666666;
 }
 
-.complete{
-
-}
-.incomplete {
-
-}
-
-
-a{
-	color:#666666;;
-}
 a:hover {
-	color: #F26D00;
-	background-color: #f5f5f5;
-	text-decoration: none;
+  color: #F26D00;
+  background-color: #f5f5f5;
+  text-decoration: none;
 }
 
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
-	border-bottom: none;
-	border-top: none;
+  border-bottom: none;
+  border-top: none;
 }
 
 .shows{
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .poop{
-	height: 40px;
-	text-decoration: underline;
+  height: 40px;
+  text-decoration: underline;
 }
