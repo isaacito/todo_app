@@ -25,11 +25,6 @@ $(document).ready(function(){
 	$('#showallbutton').on('click', function(){
 		$('.incomplete,.complete').show();
 	});
-	
-	// $('tr').on('click',function(){
-	// 	console.log('c');
-	// 	var id = $(this).attr('data-id');
-	// 	location.pathname = '/tasks/' + id;
-	// });
+
 })
 
