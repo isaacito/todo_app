@@ -14,14 +14,10 @@
  *= require_self
  */
 
-#whatever{
-  background-image: url("glyphicons_016_bin.png");
-}
-
 
 .text-center{
   text-decoration: underline;
-
+}
 
 a {
   color:#666666;
