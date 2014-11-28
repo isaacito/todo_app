@@ -16,15 +16,31 @@
 //= require_tree .
 $(document).ready(function(){
 	$('#completebutton').on('click', function(){
-		$('.incomplete').toggle()
+		$('.backlog, .in-progress, .ready').hide();
+                        $(".complete").show();
 	});
 
-	$('#incompletebutton').on('click', function(){
-		$('.complete').toggle()
-	});
-	$('#showallbutton').on('click', function(){
-		$('.incomplete,.complete').show();
-	});
+            $('#backlogbutton').on('click', function(){
+                $('.complete, .in-progress, .ready').hide();
+                $(".backlog").show();
+            });
+
+            $('#readybutton').on('click', function(){
+                $('.complete, .in-progress, .backlog').hide();
+                $('.ready').show()
+            });
+
+            $('#inprogressbutton').on('click', function(){
+                $('.complete, .ready, .backlog').hide();
+                $('.in-progress').show();
+            });
+
+            $("#showallbutton").on('click', function(){
+                $('.complete, .ready, .backlog, .in-progress').show()
+
+            });
+
+
 
 })
 

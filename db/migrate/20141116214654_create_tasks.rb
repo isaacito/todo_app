@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
       t.string :task
-      t.boolean :completed
+      t.integer :state, default: 0
       t.date :date
       t.text :description
 

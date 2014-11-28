@@ -46,3 +46,4 @@ group :production do
 	gem 'rails_12factor' # Heroku asset handler
 end
 
+gem 'devise', '~> 3.4.1'

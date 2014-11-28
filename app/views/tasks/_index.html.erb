@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-center"><img class="poop" src="http://s3-ec.buzzfed.com/static/2014-08/12/16/enhanced/webdr04/grid-cell-24434-1407875545-3.jpg" alt="poop"> To Do</h1>
+
+<table class="table table-hover">
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr class="<%= task.css_class %>">
+    <td class="state" >
+   <%= task.status %>
+   </td>
+
+
+
+
+        <!-- show -->
+        <td class="shows"><%= link_to task.task, list_task_path(@list, task) %></td>
+        <td><%= task.date %></td>
+       
+        <td><%= link_to '', edit_list_task_path(@list, task), class: "fa fa-pencil-square-o fa-2x" %></td> 
+        <td><%= link_to '', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash fa-2x"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+<button id="completebutton" type="button" class="btn btn-success">Completed Shit</button>
+<button id="backlogbutton" type="button" class="btn btn-danger">Backlogged Shit</button>
+<button id="inprogressbutton" type="button" class="btn btn-info">In Progress Shit</button>
+<button id="readybutton" type="button" class="btn btn-warning">Ready Shit</button>
+<button id="showallbutton" type="button" class="btn btn-primary">Show All Shit</button>
+<%= link_to 'New Task', new_list_task_path(@list), class: "btn btn-default btn" %>
+</div>
+<br>
+
+
+
+</div>
